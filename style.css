@@ -293,6 +293,127 @@ h3 {
   font-weight: 900;
 }
 
+.mechanics {
+  background:
+    linear-gradient(180deg, #15191c, #171215 58%, #100d12),
+    radial-gradient(circle at 18% 8%, rgba(255, 112, 56, 0.18), transparent 30%);
+}
+
+.mechanics-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.4fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.controls-panel,
+.obstacles-panel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(180deg, var(--panel), var(--panel-soft));
+  box-shadow: 0 22px 55px var(--shadow);
+}
+
+.controls-panel {
+  padding: 28px;
+}
+
+.controls-list {
+  display: grid;
+  gap: 14px;
+  padding: 0;
+  margin: 20px 0 0;
+  list-style: none;
+}
+
+.controls-list li {
+  display: grid;
+  grid-template-columns: minmax(120px, auto) 1fr;
+  gap: 14px;
+  align-items: center;
+  color: var(--muted);
+}
+
+.key-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  min-height: 38px;
+  padding: 6px 10px;
+  border: 2px solid #ffd77c;
+  border-radius: 6px;
+  color: #351407;
+  background: linear-gradient(180deg, var(--gold), var(--orange));
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 900;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.34);
+}
+
+.obstacles-panel {
+  padding: 28px;
+}
+
+.obstacle-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.obstacle-card {
+  min-height: 220px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(16, 13, 18, 0.46);
+}
+
+.obstacle-card img,
+.block-preview,
+.hole-preview {
+  width: 76px;
+  height: 76px;
+  margin-bottom: 16px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.52));
+}
+
+.block-preview,
+.hole-preview {
+  display: block;
+  border-radius: 6px;
+}
+
+.block-preview {
+  border: 3px solid #f9e28d;
+  background: linear-gradient(180deg, #d9b742, #9e731f);
+}
+
+.hole-preview {
+  border: 3px solid #4c3c46;
+  background: radial-gradient(circle, #030204 0 48%, #171215 50% 100%);
+}
+
+.obstacle-card h4 {
+  margin: 0 0 8px;
+  color: var(--gold);
+  font-size: 1.05rem;
+}
+
+.obstacle-card p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
 .creators {
   background:
     linear-gradient(rgba(16, 13, 18, 0.86), rgba(16, 13, 18, 0.92)),
@@ -383,11 +504,13 @@ h3 {
 
   .about,
   .gallery-grid,
+  .mechanics-layout,
   .creator-list {
     grid-template-columns: 1fr;
   }
 
-  .feature-grid {
+  .feature-grid,
+  .obstacle-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -408,7 +531,13 @@ h3 {
   }
 
   .feature-card,
-  .creator-card {
+  .creator-card,
+  .controls-panel,
+  .obstacles-panel {
     padding: 22px;
+  }
+
+  .controls-list li {
+    grid-template-columns: 1fr;
   }
 }
