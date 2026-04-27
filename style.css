@@ -382,7 +382,7 @@ kbd {
 }
 
 .obstacle-card img,
-.block-preview,
+.wall-texture,
 .hole-preview {
   width: 76px;
   height: 76px;
@@ -392,15 +392,22 @@ kbd {
   filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.52));
 }
 
-.block-preview,
+.wall-texture,
 .hole-preview {
   display: block;
   border-radius: 6px;
 }
 
-.block-preview {
-  border: 3px solid #f9e28d;
-  background: linear-gradient(180deg, #d9b742, #9e731f);
+.wall-texture {
+  border: 3px solid #b26a4a;
+  background-color: #7f3428;
+  background-image: url("imagens/Fundo de tijolos.png");
+  background-position: 42% 54%;
+  background-size: 260%;
+  border-radius: 6px;
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 211, 139, 0.12),
+    inset 0 -12px 18px rgba(0, 0, 0, 0.22);
 }
 
 .hole-preview {
