@@ -561,6 +561,35 @@ kbd {
   transform: translateY(0);
 }
 
+.download {
+  background:
+    linear-gradient(180deg, #100d12, #171215 58%, #15191c),
+    radial-gradient(circle at 18% 18%, rgba(255, 207, 87, 0.16), transparent 32%);
+}
+
+.download-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1040px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(180deg, var(--panel), var(--panel-soft));
+  box-shadow: 0 24px 60px var(--shadow);
+}
+
+.download-panel p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.download-button {
+  min-width: 180px;
+  flex: 0 0 auto;
+}
+
 .gameplay {
   background:
     linear-gradient(180deg, #15191c, #0f1115),
@@ -642,6 +671,11 @@ kbd {
   .hero-actions,
   .button {
     width: 100%;
+  }
+
+  .download-panel {
+    align-items: stretch;
+    flex-direction: column;
   }
 
   .feature-card,
