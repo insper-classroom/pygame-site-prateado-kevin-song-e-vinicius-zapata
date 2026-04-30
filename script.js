@@ -2,6 +2,8 @@ const navLinks = Array.from(document.querySelectorAll('.nav a[href^="#"]'));
 const sections = navLinks
   .map((link) => document.querySelector(link.getAttribute('href')))
   .filter(Boolean);
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
 
 navLinks.forEach((link) => {
   link.addEventListener('click', (event) => {
@@ -12,13 +14,19 @@ navLinks.forEach((link) => {
     }
 
     event.preventDefault();
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    target.scrollIntoView({ behavior: scrollBehavior, block: 'start' });
   });
 });
 
 const markActiveLink = (id) => {
   navLinks.forEach((link) => {
-    link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+    const isActive = link.getAttribute('href') === `#${id}`;
+    link.classList.toggle('is-active', isActive);
+    if (isActive) {
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.removeAttribute('aria-current');
+    }
   });
 };
 
@@ -70,6 +78,15 @@ document.querySelectorAll('.video-frame iframe').forEach((frame) => {
   }
 });
 
+const downloadButton = document.querySelector('.download-button');
+const downloadStatus = document.querySelector('#download-status');
+
+if (downloadButton && downloadStatus) {
+  downloadButton.addEventListener('click', () => {
+    downloadStatus.textContent = 'Download iniciado. Se nada acontecer, verifique se o navegador bloqueou downloads.';
+  });
+}
+
 const lightbox = document.createElement('div');
 lightbox.className = 'lightbox';
 lightbox.innerHTML = `
@@ -86,6 +103,7 @@ const lightboxCaption = lightbox.querySelector('figcaption');
 const closeLightbox = () => {
   lightbox.classList.remove('is-open');
   document.body.classList.remove('is-locked');
+  lightboxImage.removeAttribute('src');
 };
 
 document.querySelectorAll('.gallery .screenshot img').forEach((image) => {
@@ -125,12 +143,12 @@ document.addEventListener('keydown', (event) => {
 const backTopButton = document.createElement('button');
 backTopButton.className = 'back-top';
 backTopButton.type = 'button';
-backTopButton.textContent = '↑';
+backTopButton.textContent = '\u2191';
 backTopButton.setAttribute('aria-label', 'Voltar ao inicio');
 document.body.appendChild(backTopButton);
 
 backTopButton.addEventListener('click', () => {
-  document.querySelector('#inicio')?.scrollIntoView({ behavior: 'smooth' });
+  document.querySelector('#inicio')?.scrollIntoView({ behavior: scrollBehavior });
 });
 
 window.addEventListener('scroll', () => {
