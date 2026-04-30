@@ -13,9 +13,10 @@
       <a href="#sobre">Sobre</a>
       <a href="#galeria">Galeria</a>
       <a href="#funcionalidades">Funcionalidades</a>
-      <a href="#participantes">Participantes</a>
-      <a href="#download">Download</a>
       <a href="#gameplay">Gameplay</a>
+      <a href="#download">Download</a>
+      <a href="#log-dev">Log</a>
+      <a href="#participantes">Participantes</a>
     </nav>
   </header>
 
@@ -141,17 +142,17 @@
               <p>Leva para a proxima fase quando o jogador consegue chegar nele.</p>
             </article>
             <article class="obstacle-card">
-              <span class="trampoline-preview" role="img" aria-label="Trampolim verde do jogo"></span>
+              <img class="trampoline-image" src="imagens/trampolim.png" alt="Trampolim do jogo">
               <h4>Trampolins</h4>
               <p>Impulsionam o jogador para alcancar saltos maiores e evitar espinhos no ar.</p>
             </article>
             <article class="obstacle-card">
-              <span class="orb-preview" role="img" aria-label="Bolinha dourada do jogo"></span>
+              <img class="fireball-preview" src="imagens/fireball.png" alt="Fireball do jogo">
               <h4>Bolinhas</h4>
               <p>Podem sumir ao encostar, enganar o jogador ou matar quando fazem parte da armadilha.</p>
             </article>
             <article class="obstacle-card">
-              <span class="moving-wall-preview" role="img" aria-label="Parede movel vermelha do jogo"></span>
+              <span class="moving-wall-preview" role="img" aria-label="Recorte da parede movel vermelha do jogo"></span>
               <h4>Paredes moveis</h4>
               <p>Surgem durante a fase e empurram o jogador para buracos ou espinhos.</p>
             </article>
@@ -165,23 +166,19 @@
       </div>
     </section>
 
-    <section class="section creators" id="participantes">
+    <section class="section gameplay" id="gameplay">
       <div class="section-heading">
-        <p class="eyebrow">Equipe</p>
-        <h2>Participantes do projeto</h2>
+        <p class="eyebrow">Video</p>
+        <h2>Gameplay do jogo</h2>
       </div>
 
-      <div class="creator-list">
-        <article class="creator-card">
-          <span class="creator-initial">K</span>
-          <h3>Kevin Song</h3>
-          <p>Participante do desenvolvimento de Devil's keep.</p>
-        </article>
-        <article class="creator-card">
-          <span class="creator-initial">V</span>
-          <h3>Vinicius Zapata</h3>
-          <p>Participante do desenvolvimento de Devil's keep.</p>
-        </article>
+      <div class="video-frame">
+        <iframe
+          src="https://youtu.be/_RnxOUSWVIE"
+          title="Gameplay do jogo"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
       </div>
     </section>
 
@@ -206,19 +203,117 @@
       </div>
     </section>
 
-    <section class="section gameplay" id="gameplay">
+    <section class="section dev-log" id="log-dev">
       <div class="section-heading">
-        <p class="eyebrow">Video</p>
-        <h2>Gameplay do jogo</h2>
+        <p class="eyebrow">Historico do projeto</p>
+        <h2>Log de desenvolvimento</h2>
+        <p>
+          Linha do tempo criada a partir dos commits do repositorio do jogo,
+          mostrando como Devil's keep evoluiu durante o projeto.
+        </p>
       </div>
 
-      <div class="video-frame">
-        <iframe
-          src="https://youtu.be/ChMR_POwgv4?si=xE7uzvZDqatVmcKF"
-          title="Gameplay do jogo"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
+      <div class="log-timeline">
+        <article class="log-entry">
+          <span class="log-date">16/04</span>
+          <div>
+            <h3>Inicio do projeto</h3>
+            <p>README, primeiros testes, estrutura inicial e criacao das primeiras classes.</p>
+            <p class="commit-list">Commits: a89db37, 7ce471a, 5729133, 2df4253</p>
+          </div>
+        </article>
+        <article class="log-entry">
+          <span class="log-date">18/04</span>
+          <div>
+            <h3>Storyboard e sprites</h3>
+            <p>Storyboard no README, ajustes de documentacao, sprites do jogador e gitignore.</p>
+            <p class="commit-list">Commits: bcf72d6, 7ebe3dd, 6487bec</p>
+          </div>
+        </article>
+        <article class="log-entry">
+          <span class="log-date">21/04</span>
+          <div>
+            <h3>Visual do jogo</h3>
+            <p>Tela do jogo, imagens de portal e espinho, e ajustes nas classes principais.</p>
+            <p class="commit-list">Commits: 430ff5b, bb431ca</p>
+          </div>
+        </article>
+        <article class="log-entry">
+          <span class="log-date">23/04</span>
+          <div>
+            <h3>Hitbox e movimento</h3>
+            <p>Hitboxes, espinho movel, frames de movimento e arquivo para desenhar telas.</p>
+            <p class="commit-list">Commits: f04690d, fb19278, 1a8bdcd, 83ffeb5, 13bd295</p>
+          </div>
+        </article>
+        <article class="log-entry">
+          <span class="log-date">24/04</span>
+          <div>
+            <h3>Colisoes e menus</h3>
+            <p>Correcao de colisao com portal e paredes, nascimento do personagem e clique nas telas iniciais.</p>
+            <p class="commit-list">Commits: f018b3d, 920299b</p>
+          </div>
+        </article>
+        <article class="log-entry">
+          <span class="log-date">25/04</span>
+          <div>
+            <h3>Sons e tela de niveis</h3>
+            <p>Efeitos sonoros, musicas, tela de niveis e melhorias gerais de jogabilidade.</p>
+            <p class="commit-list">Commits: 6607fc8, 006bf74</p>
+          </div>
+        </article>
+        <article class="log-entry">
+          <span class="log-date">26/04</span>
+          <div>
+            <h3>Correcao de bugs</h3>
+            <p>Imagens recriadas para resolver fundo preto, ajustes de hitbox e nova tela de morte.</p>
+            <p class="commit-list">Commit: 3c59279</p>
+          </div>
+        </article>
+        <article class="log-entry">
+          <span class="log-date">27/04</span>
+          <div>
+            <h3>Niveis 1 a 10</h3>
+            <p>Correcoes na morte do jogador, niveis 1 ao 10, novo design de parede e ajuste do nivel 6.</p>
+            <p class="commit-list">Commits: 531687e, 24f08db, 1664374, 7fcb3e7</p>
+          </div>
+        </article>
+        <article class="log-entry">
+          <span class="log-date">28/04</span>
+          <div>
+            <h3>Joystick, ranking e vitoria</h3>
+            <p>Sons nas animacoes, joystick, tela de vitoria, ranking e fases 7 a 12 corrigidas.</p>
+            <p class="commit-list">Commits: a043d96, 1130109, 7b94120, eff580f, 2ab5e36</p>
+          </div>
+        </article>
+        <article class="log-entry">
+          <span class="log-date">29/04</span>
+          <div>
+            <h3>Fases finais e novos sprites</h3>
+            <p>Fases 13, 14 e 15, ajuste da fase 12, novos sprites e novas imagens.</p>
+            <p class="commit-list">Commits: 472fb2b, 2afece0, 04ade16, 3df51aa, 06656a1</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section creators" id="participantes">
+      <div class="section-heading">
+        <p class="eyebrow">Equipe</p>
+        <h2>Participantes do projeto</h2>
+      </div>
+
+      <div class="creator-list">
+        <article class="creator-card">
+          <span class="creator-initial">K</span>
+          <h3>Kevin Song</h3>
+          <p>Participante do desenvolvimento de Devil's keep.</p>
+        </article>
+        <article class="creator-card">
+          <span class="creator-initial">V</span>
+          <h3>Vinicius Zapata</h3>
+          <p>Participante do desenvolvimento de Devil's keep.</p>
+        </article>
       </div>
     </section>
   </main>
