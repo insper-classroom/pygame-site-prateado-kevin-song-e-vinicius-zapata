@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#sobre">Pular para o conteudo</a>
   <header class="site-header">
     <a class="brand" href="#inicio">Devil's keep</a>
     <nav class="nav" aria-label="Navegacao principal">
@@ -32,6 +33,7 @@
         <p class="authors">Criado por Kevin Song e Vinicius Zapata</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#galeria">Ver telas</a>
+          <a class="button button-primary" href="#download">Baixar jogo</a>
           <a class="button button-secondary" href="#participantes">Autores</a>
         </div>
       </div>
@@ -96,15 +98,15 @@
           <h3>Teclas e acoes</h3>
           <ul class="controls-list">
             <li>
-              <span class="key-group"><kbd>A</kbd><kbd>←</kbd></span>
+              <span class="key-group"><kbd>A</kbd><kbd>&larr;</kbd></span>
               <span>Andar para a esquerda</span>
             </li>
             <li>
-              <span class="key-group"><kbd>D</kbd><kbd>→</kbd></span>
+              <span class="key-group"><kbd>D</kbd><kbd>&rarr;</kbd></span>
               <span>Andar para a direita</span>
             </li>
             <li>
-              <span class="key-group"><kbd>W</kbd><kbd>↑</kbd><kbd>Espaco</kbd></span>
+              <span class="key-group"><kbd>W</kbd><kbd>&uarr;</kbd><kbd>Espaco</kbd></span>
               <span>Pular</span>
             </li>
             <li>
@@ -174,12 +176,16 @@
 
       <div class="video-frame">
         <iframe
-          src='https://youtu.be/_RnxOUSWVIE'
+          src="https://www.youtube.com/embed/_RnxOUSWVIE"
           title="Gameplay do jogo"
+          loading="lazy"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
       </div>
+      <a class="source-link" href="https://www.youtube.com/watch?v=_RnxOUSWVIE" target="_blank" rel="noreferrer">
+        Abrir gameplay no YouTube
+      </a>
     </section>
 
     <section class="section download" id="download">
@@ -196,10 +202,33 @@
         <div>
           <h3>Devil's keep para baixar</h3>
           <p>Arquivo ZIP do jogo preparado para download.</p>
+          <p class="download-meta">Formato: ZIP | Tamanho aproximado: 40 MB | Atualizado em 30/04/2026</p>
         </div>
-        <a class="button button-primary download-button" href="downloads/devils-keep.zip" download>
+        <a class="button button-primary download-button" href="downloads/devils-keep.zip" download aria-describedby="download-status">
           Baixar jogo
         </a>
+      </div>
+      <p class="status-message" id="download-status" role="status" aria-live="polite">
+        O download comeca quando o botao e pressionado.
+      </p>
+
+      <div class="run-instructions" aria-labelledby="run-title">
+        <h3 id="run-title">Como rodar o jogo</h3>
+        <ol class="run-steps">
+          <li>Baixe o arquivo ZIP e extraia a pasta do jogo.</li>
+          <li>Abra o terminal dentro da pasta extraida.</li>
+          <li>Instale o Pygame, se ainda nao tiver instalado.</li>
+          <li>Execute o arquivo principal do jogo.</li>
+        </ol>
+
+        <div class="command-list" aria-label="Comandos para executar o jogo">
+          <code>pip install pygame</code>
+          <code>python jogo.py</code>
+        </div>
+
+        <p class="help-note">
+          Se `python jogo.py` nao funcionar, tente `py jogo.py` no Windows.
+        </p>
       </div>
     </section>
 
